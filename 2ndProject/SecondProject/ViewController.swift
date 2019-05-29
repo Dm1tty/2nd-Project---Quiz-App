@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var totalTime = 15
 
     
-    
+    //init audioplayer
     var audioPlayer: AVAudioPlayer?
     
     var currentQuestion = 0
