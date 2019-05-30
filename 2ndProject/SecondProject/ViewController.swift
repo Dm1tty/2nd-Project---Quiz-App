@@ -48,11 +48,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      
+        
         // loading questions from QuesetionProvider.swift
         questions = questionProvider.questionBank
         
-       
+        
         startNewGame()
     }
     
@@ -75,41 +75,39 @@ class ViewController: UIViewController {
         // checking if there are questions left
         if currentQuestion != questions.count{
             
-        // triggers when there are questions left
-            
+            // triggers when there are questions left
+            //starts timer every round
             startTimer()
             
-        nextQuestionButton.isEnabled = false
-        arrayOfButtons = [answer1Button,answer2Button,answer3Button,answer4Button]
-           
-            //unblock all the buttons which were locked after user picked an answer
-            for button in arrayOfButtons{
-                button.isEnabled = true
-            }
+            // blocks the next question button
+            nextQuestionButton.isEnabled = false
             
+            //unblock all the buttons which were locked
+            unlockAnswerButtons()
             
             arrayOfButtons.shuffle()
+            
             //give the correct answer to a random button
             //delete this button from the array
             arrayOfButtons.last!.setTitle(questions[currentQuestion].correctAnswer, for: .normal)
-                arrayOfButtons.removeLast()
+            arrayOfButtons.removeLast()
             
-                fillButtonsWithDummyAnswers()
+            fillButtonsWithDummyAnswers()
             
             
             // UPDATING UI WITH NEW QUESTION
-        questionLabel.text = questions[currentQuestion].question
-        correctAnswer = questions[currentQuestion].correctAnswer
-        
+            questionLabel.text = questions[currentQuestion].question
+            correctAnswer = questions[currentQuestion].correctAnswer
             
-        currentQuestion+=1
-        questionNumberLabel.text = "Question: \(currentQuestion)/15"
-        
-}
+            
+            currentQuestion+=1
+            questionNumberLabel.text = "Question: \(currentQuestion)/15"
+            
+        }
         else{
-            //no questions left
+            // triggers when there are no questions left
             print("Game over!")
-           finishTheGame()
+            finishTheGame()
         }
     }
     
@@ -117,12 +115,9 @@ class ViewController: UIViewController {
     @IBAction func answerButtonWasPressed(_ sender: UIButton) {
         endTimer()
         checkCorrectness(correct: correctAnswer, chosen: sender.titleLabel!.text!)
-       
+        
         // blocks all the buttons and unlocks them when a new question appears
-        answer1Button.isEnabled = false
-        answer2Button.isEnabled = false
-        answer3Button.isEnabled = false
-        answer4Button.isEnabled = false
+        lockAnswerButtons()
     }
     
     func checkCorrectness(correct: String, chosen: String){
@@ -142,21 +137,21 @@ class ViewController: UIViewController {
             questionLabel.text = "You didn't get it right. The correct answer was \(questions[currentQuestion-1].correctAnswer)."
             nextQuestionButton.isEnabled = true
         }
-        }
+    }
     
     
     func playSound(whichOne: String){
-            do {
-                if let fileURL = Bundle.main.path(forResource: whichOne, ofType: "wav") {
-                    audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
-                    audioPlayer?.play()
-                } else {
-                    print("No file with specified name exists")
-                }
-            } catch let error {
-                print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        do {
+            if let fileURL = Bundle.main.path(forResource: whichOne, ofType: "wav") {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+                audioPlayer?.play()
+            } else {
+                print("No file with specified name exists")
             }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
         }
+    }
     
     
     func startTimer() {
@@ -181,11 +176,7 @@ class ViewController: UIViewController {
         questionLabel.text = "You didn't get it right. The correct answer was \(questions[currentQuestion-1].correctAnswer)."
         
         nextQuestionButton.isEnabled = true
-        
-        arrayOfButtons = [answer1Button,answer2Button,answer3Button,answer4Button]
-        for button in arrayOfButtons{
-            button.isEnabled = false
-        }
+        lockAnswerButtons()
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {
@@ -194,13 +185,13 @@ class ViewController: UIViewController {
         //     let hours: Int = totalSeconds / 3600
         return String(format: "%02d:%02d", minutes, seconds)
     }
-
+    
     
     
     @IBAction func nextQuestionButtonWasPressed(_ sender: Any) {
-    nextQuestion()
+        nextQuestion()
     }
-
+    
     
     @IBAction func restartQuiz(_ sender: Any) {
         startNewGame()
@@ -220,13 +211,28 @@ class ViewController: UIViewController {
     }
     
     
+    func lockAnswerButtons(){
+        arrayOfButtons = [answer1Button, answer2Button,answer3Button,answer4Button]
+        for button in arrayOfButtons{
+            button.isEnabled = false
+        }
+    }
+    
+    func unlockAnswerButtons(){
+        arrayOfButtons = [answer1Button, answer2Button,answer3Button,answer4Button]
+        for button in arrayOfButtons{
+            button.isEnabled = true
+        }
+    }
+    
+    
     func fillButtonsWithDummyAnswers(){
         var dummyIndexes = [Int]()
         var i = 0
         
         while dummyIndexes.count < 3{
             let randomNumber = Int.random(in: 0..<questions.count)
-           
+            
             if !dummyIndexes.contains(randomNumber) && currentQuestion != randomNumber{
                 dummyIndexes.append(randomNumber)
             }
@@ -238,7 +244,7 @@ class ViewController: UIViewController {
     }
 }
 
-    
-    
+
+
 
 
