@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColor" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-Bh-ZGf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColor" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-Bh-ZGf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-Kd-xOn">
@@ -166,9 +166,12 @@
                             <constraint firstItem="xTu-F3-CKg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1az-hM-Nqa"/>
                             <constraint firstItem="utn-1g-ZYJ" firstAttribute="top" secondItem="yT4-sh-nZb" secondAttribute="bottom" constant="10" id="4Rz-bU-FkW"/>
                             <constraint firstItem="utn-1g-ZYJ" firstAttribute="trailing" secondItem="MCH-Kd-xOn" secondAttribute="trailing" id="4oi-Lk-qmL"/>
+                            <constraint firstItem="5MD-Bh-ZGf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7BE-DP-y4P"/>
                             <constraint firstItem="Sjp-89-Hbj" firstAttribute="top" secondItem="DLL-iX-7Tt" secondAttribute="bottom" constant="8" symbolic="YES" id="7W1-2Z-uoG"/>
                             <constraint firstItem="utn-1g-ZYJ" firstAttribute="leading" secondItem="MCH-Kd-xOn" secondAttribute="leading" id="8dT-4M-AKJ"/>
                             <constraint firstAttribute="trailing" secondItem="xTu-F3-CKg" secondAttribute="trailing" id="Bdi-ha-Wq6"/>
+                            <constraint firstAttribute="bottom" secondItem="5MD-Bh-ZGf" secondAttribute="bottom" id="DfT-Mv-VlM"/>
+                            <constraint firstItem="5MD-Bh-ZGf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EMh-SY-scg"/>
                             <constraint firstItem="J12-MC-wem" firstAttribute="top" secondItem="MCH-Kd-xOn" secondAttribute="bottom" constant="31" id="F6Y-WD-3sl"/>
                             <constraint firstItem="DLL-iX-7Tt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="G2X-lH-k6H"/>
                             <constraint firstItem="xTu-F3-CKg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HgX-ia-h3Y"/>
@@ -176,6 +179,7 @@
                             <constraint firstItem="A0H-HB-pDb" firstAttribute="trailing" secondItem="yT4-sh-nZb" secondAttribute="trailing" id="L6f-QN-M4O"/>
                             <constraint firstItem="kG4-9d-xS4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="LhO-4Y-VtY"/>
                             <constraint firstItem="A0H-HB-pDb" firstAttribute="leading" secondItem="yT4-sh-nZb" secondAttribute="leading" id="Mbi-zO-4xB"/>
+                            <constraint firstItem="5MD-Bh-ZGf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NUR-zl-ypw"/>
                             <constraint firstItem="kG4-9d-xS4" firstAttribute="top" secondItem="Sjp-89-Hbj" secondAttribute="bottom" constant="8" symbolic="YES" id="Nxg-4c-qyn"/>
                             <constraint firstItem="DLL-iX-7Tt" firstAttribute="leading" secondItem="Sjp-89-Hbj" secondAttribute="leading" id="RQA-A6-fiu"/>
                             <constraint firstItem="xTu-F3-CKg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SVu-JO-BsV"/>

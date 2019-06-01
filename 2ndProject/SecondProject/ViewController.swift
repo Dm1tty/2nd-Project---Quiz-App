@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+    
         // loading questions from QuesetionProvider.swift
         questions = questionProvider.questionBank
         
@@ -98,10 +98,8 @@ class ViewController: UIViewController {
             // UPDATING UI WITH NEW QUESTION
             questionLabel.text = questions[currentQuestion].question
             correctAnswer = questions[currentQuestion].correctAnswer
-            
-            
             currentQuestion+=1
-            questionNumberLabel.text = "Question: \(currentQuestion)/15"
+            questionNumberLabel.text = "Question: \(currentQuestion)/\(questions.count)"
             
         }
         else{
