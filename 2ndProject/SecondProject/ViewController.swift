@@ -32,8 +32,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameOverView: UIView!
     @IBOutlet weak var gameOverTitle: UILabel!
     @IBOutlet weak var gameOverMessage: UILabel!
-    
-    
     @IBOutlet weak var answer1Button: UIButton!
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
@@ -50,7 +48,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     
         // loading questions from QuesetionProvider.swift
-        questions = questionProvider.questionBank
         
         
         startNewGame()
@@ -62,14 +59,19 @@ class ViewController: UIViewController {
         currentQuestion = 0
         score = 0
         
-        questions.shuffle()
+        questions = questionProvider.questionBank
+         questions.shuffle()
+        
+        
+        repeat{
+            questions.removeLast()
+        }while questions.count != 5
+        
+       
         gameOverView.isHidden = true
         nextQuestion()
         
     }
-    
-    
-    
     
     func nextQuestion(){
         // checking if there are questions left
@@ -197,12 +199,12 @@ class ViewController: UIViewController {
     
     func finishTheGame(){
         gameOverView.isHidden = false
-        gameOverTitle.text = "You got \(score)/15"
+        gameOverTitle.text = "You got \(score)/5"
         
         switch score{
-        case 15: gameOverMessage.text = "Great job. You got them all. Thank you for playing my game"
-        case 12...14: gameOverMessage.text = "Good job. You can do better, just do it again."
-        case 8...11: gameOverMessage.text = "You did okay, but definetely try one more time."
+        case 5: gameOverMessage.text = "Great job. You got them all. Thank you for playing my game"
+        case 3...4: gameOverMessage.text = "Good job. You can do better, just do it again."
+        case 1...2: gameOverMessage.text = "You did okay, but definetely try one more time."
         default:
             gameOverMessage.text = "Someone doesn't know the lyrics at all. Do it again."
         }
