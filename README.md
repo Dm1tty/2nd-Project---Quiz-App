@@ -1,6 +1,7 @@
-# UX Quiz App
+# Enhancing a Quiz App 
 iOS Techdegree Project 2
-Simple quiz app that displays a mix of 2,3 or 4 choice questions. Correct answer is displayed when player guesses incorrectly. Game includes a lightning mode with 15 seconds countdown timer for each question set.
+
+**As a developer, one of things you need to get comfortable with is working with code that other people have written. In this project, improve an existing iOS quiz app to allow for more questions, improve the user interface, and customize the content to match your own interests.
 
 # Required Tasks
 - Convert the Storyboard back to a universal scene and add constraints to maintain the layout such all UI elements are sized and spaced appropriately for all iPhones of screen sizes 4.7 and 5.5. inches.
