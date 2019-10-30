@@ -7,3 +7,5 @@ As a developer, one of things you need to get comfortable with is working with c
 - Ensure that code adheres to the MVC pattern.
 - Enhance the quiz so it can accommodate four answer choices for each question, as shown in the mockups and sample question set.
 - Add functionality such that during each game, questions are chosen at random, though no question will be repeated within a single game.
+
+# Received grade: Meets Expectations
