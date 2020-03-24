@@ -10,4 +10,4 @@ As a developer, one of things you need to get comfortable with is working with c
 
 # Received grade: Meets Expectations
 
-![Image of Yaktocat](https://imgur.com/NEKvd6pg)
+![Image of Yaktocat](https://i.imgur.com/NEKvd6p.png)
