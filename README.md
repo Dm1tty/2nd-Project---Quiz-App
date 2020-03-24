@@ -12,7 +12,7 @@
 
 **Received grade:** 
    - Meets Expectations
-
+**Screenshots:**
 ![Game in Progress - Wrong Answer](https://i.imgur.com/NfCzDSY.png)
 ![Game in Progress - Correct Answer](https://i.imgur.com/vjjzRv7.png)
 ![Game Over](https://i.imgur.com/UC1amEZ.png)
