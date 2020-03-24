@@ -10,4 +10,5 @@ As a developer, one of things you need to get comfortable with is working with c
 
 # Received grade: Meets Expectations
 
-![Image of Yaktocat](https://i.imgur.com/NEKvd6p.png)
+![Game in Progress](https://i.imgur.com/NEKvd6p.png)
+![Game Over](https://i.imgur.com/eCKiMCR.png)
