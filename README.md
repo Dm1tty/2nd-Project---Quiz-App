@@ -9,4 +9,5 @@ As a developer, one of things you need to get comfortable with is working with c
 - Add functionality such that during each game, questions are chosen at random, though no question will be repeated within a single game.
 
 # Received grade: Meets Expectations
-<img src="ihttps://imgur.com/NEKvd6p" alt="First">
+<img src="https://imgur.com/NEKvd6p" alt="First">
+
