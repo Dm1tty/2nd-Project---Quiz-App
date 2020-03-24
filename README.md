@@ -10,5 +10,6 @@ As a developer, one of things you need to get comfortable with is working with c
 
 # Received grade: Meets Expectations
 
-![Game in Progress](https://i.imgur.com/NEKvd6p.png)
-![Game Over](https://i.imgur.com/eCKiMCR.png)
+![Game in Progress - Wrong Answer](https://i.imgur.com/NfCzDSY.png)
+![Game in Progress - Correct Answer](https://i.imgur.com/vjjzRv7.png)
+![Game Over](https://i.imgur.com/UC1amEZ.png)
